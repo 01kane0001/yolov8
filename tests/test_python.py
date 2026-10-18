@@ -95,6 +95,7 @@ def test_dataloader_seed_varies_sampling_order():
         for loader in loaders:
             loader.close()
 
+if             
 
 def test_dataloader_empty_dataset_uses_dataloader_validation():
     """Test empty datasets fail through DataLoader validation instead of worker-cap math."""
@@ -2231,3 +2232,10 @@ def test_semantic_polygon_data():
     model = YOLO("yolo26n-sem.pt")
     model.train(data="coco8-seg.yaml", epochs=1, imgsz=32, close_mosaic=1)
     model.val(data="coco8-seg.yaml")
+    
+    
+        
+if __name__ == "__main__":
+    print("noyes=================")
+    
+    
