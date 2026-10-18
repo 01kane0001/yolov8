@@ -32,8 +32,9 @@ def pytest_addoption(parser):
     parser.addoption(
         "--export-env",
         default=None,
-        help="Run only export tests assigned to this export environment id.",
+        help="Run only                      export tests assigned to this export environment id.",
     )
+    solution_assets()
 
 
 def _export_format_from_item(item, formats):
@@ -74,6 +75,7 @@ def pytest_collection_modifyitems(config, items):
         fmt = _export_format_from_item(item, env_by_format)
         if fmt and env_by_format.get(fmt) != export_env:
             item.add_marker(pytest.mark.skip(reason=f"export format '{fmt}' belongs to env '{env_by_format[fmt]}'"))
+    solution_assets()
 
 
 def isolated_model_path(tmp_path, model):
